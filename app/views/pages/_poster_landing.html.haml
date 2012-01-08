@@ -1,0 +1,61 @@
+%section
+  %header
+    %hgroup
+      %h1 NEW CARTOGRAPHERS
+      %h2 creative agency
+    %p= "est. #{time_tag('2012')}"
+  
+  %section#introduction
+    %p We've entered a new Age of Exploration
+    %p The web is our frontier
+    
+    %p the voyage begins
+    %p= time_tag('01/16/12')
+  
+  %section#crew
+    %header
+      %h1 Our Crew
+    
+    %dl
+      %dt Brian McNabb
+      %dd 
+        %span --
+        %address Brooklyn, New York
+        %p Web-Developer, Businessman, Strategist
+      %dt Matt Owen
+      %dd 
+        %span --
+        %address Little Rock, Arkansas
+        %p Graphic Artist, Posterman, Minimalist
+      %dt Connor McNabb
+      %dd 
+        %span --
+        %address Little Rock, Arkansas
+        %p Copywriter, Web-Designer, Generalist
+  
+  %section#contact
+    %header
+      %h1 Now accepting inquiries!
+    
+    = simple_form_for Inquiry.new, id: 'inquiries' do |f|
+      = f.input :name, placeholder: 'first last'
+      = f.input :email, placeholder: 'john.doe@example.com'
+      = f.input :description, , placeholder: 'What can we do for you?'
+      = f.input :mailing_list, as: :checkbox, default: true
+      = f.button :submit
+      = link_to 'Sign up for our Mailing list', '#', id: 'mailing_list'
+      
+    = simple_form_for mailing_list_signup_path, id: 'mailing_list_signup' do |f|
+      = f.input :email
+      = f.button :submit
+      %p Seriously. We won't spam you.
+      = link_to 'Inquire about our services', '#', id: 'inquiries'
+  
+  %footer
+
+
+-#*Notes: 
+-#-Agency Social Buttons at the top. Individual Social buttons by the Names/Descriptions.
+-#-Inquiry form would  include a drop down for project-type, and fields for Organization, Name, Title, Location, and Project Description
+-#-I'd like to set a real deadline for the official site—just to keep us honest. Something attainable, but let's not put it off too far.
+-#-Clicking on the Mailing list sign-up button would update the inquiry form to a mailing list sign-up form accompanied by a disclaimer about how often we plan to send updates and what those updates will be about. The button itself will be replaced by two buttons that say something to the tune of  "Yes, Sign me up" and "No Thanks"
