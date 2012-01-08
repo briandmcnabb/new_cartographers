@@ -4,10 +4,12 @@ class PagesController < ApplicationController
 
   def show
     @page_name = params[:page_name].to_s.gsub(/\W/,'')
+    @page_name = RootPage if @page_name.empty?
     unless partial_exists?(@page_name)
       render 'missing', :status => 404
     end
   end
+
 
   private
 
@@ -16,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def self.find_partials
-    Dir.glob(Rails.root.join('app', 'views', 'site', 'pages', '_*.erb')).map do |file|
+    Dir.glob(Rails.root.join('app', 'views', 'pages', '_*.haml')).map do |file|
       file = Pathname.new(file).basename.to_s
       # Strip leading _ and then everything from the first . to the end of the name
       file.sub(/^_/, '').sub(/\..+$/, '')
@@ -25,5 +27,6 @@ class PagesController < ApplicationController
 
   # Do this once on boot
   ValidPartials = Site::PagesController.find_partials
+  RootPage      = 'poster_landing'
 
 end
