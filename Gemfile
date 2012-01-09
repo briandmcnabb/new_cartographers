@@ -5,6 +5,7 @@ gem 'sqlite3'
 
 gem 'jquery-rails'
 
+gem 'inherited_resources'
 gem 'simple_form'
 gem 'app'
 
