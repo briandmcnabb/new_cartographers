@@ -54,6 +54,7 @@
       
     = simple_form_for(MailingListSubscription.new) do |f|
       = f.input :email, placeholder: 'john.doe@example.com'
+      = f.input :captcha
       = f.button :submit, 'join'
       %p We'll keep you abreast of what's going on leading up to our official site launch. You can expect no more than 2 messages a month.
       %p Seriously. We won't spam you.
