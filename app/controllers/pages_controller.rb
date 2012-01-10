@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
 
-  layout 'site'
-
   def show
     @page_name = params[:page_name].to_s.gsub(/\W/,'')
     @page_name = RootPage if @page_name.empty?
@@ -26,7 +24,7 @@ class PagesController < ApplicationController
   end
 
   # Do this once on boot
-  ValidPartials = Site::PagesController.find_partials
+  ValidPartials = PagesController.find_partials
   RootPage      = 'poster_landing'
 
 end
