@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-
+  layout :page_layout
+  
   def show
     @page_name = params[:page_name].to_s.gsub(/\W/,'')
     @page_name = RootPage if @page_name.empty?
@@ -22,7 +23,11 @@ class PagesController < ApplicationController
       file.sub(/^_/, '').sub(/\..+$/, '')
     end
   end
-
+  
+  def page_layout
+    'boilerplate' if ['poster_landing'].include? @page_name
+  end
+  
   # Do this once on boot
   ValidPartials = PagesController.find_partials
   RootPage      = 'poster_landing'

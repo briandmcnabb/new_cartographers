@@ -1,6 +1,5 @@
 require 'active_model'
 
-# This the module which makes any class behave like ActiveModel.
 module ActiveModelShim
   def self.included(base)
     base.class_eval do
@@ -9,34 +8,44 @@ module ActiveModelShim
       extend ActiveModel::Callbacks
       include ActiveModel::Validations
       include ActiveModel::Conversion
+      include ActiveModel::AttributeMethods
 
       extend ActiveModelShim::ClassMethods
     end
   end
 
   module ClassMethods
+    # Set i18n  scope
     def i18n_scope
-      :mail_form
+      :mailing_list_subscription
+    end
+    
+    # Declare class attributes
+    def attributes(*names)
+      attr_accessor *names
+      define_attribute_methods names
     end
   end
 
-  # Initialize assigning the parameters given as hash.
+
+  # Initializer: Assign the parameters given as hash.
   def initialize(params={})
     params.each_pair do |attr, value|
       self.send(:"#{attr}=", value)
     end unless params.blank?
   end
-
-  # Returns a hash of attributes, according to the attributes existent in
-  # self.class.mail_attributes.
+  
+  
+  # Returns a hash of declared attributes
   def attributes
-    self.class.mail_attributes.inject({}) do |hash, attr|
+    self.class.attributes.inject({}) do |hash, attr|
       hash[attr.to_s] = send(attr)
       hash
     end
   end
+  
 
-  # Always return true so when using form_for, the default method will be post.
+  # Utility methods to force POST method when using form_fo
   def new_record?
     true
   end
@@ -45,8 +54,20 @@ module ActiveModelShim
     false
   end
 
-  # Always return nil so when using form_for, the default method will be post.
   def id
     nil
+  end
+  
+  
+  
+  protected
+  # Utility method to clear attribute value
+  def clear_attribute(attribute)
+    send("#{attribute}=", nil)
+  end
+  
+  # Syntactical sugar for checking attribute presence
+  def attribute?(attribute)
+    send(attribute).present?
   end
 end

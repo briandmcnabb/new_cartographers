@@ -1,14 +1,16 @@
 class MailingListSubscription < MadMimi
   include ActiveModelShim
-
+  extend  ClassifyInstanceMethods
+  
   # Initializer
-  def initialize
+  def initialize(params={})
     @api_settings = { username: ENV['MADMIMI_USERNAME'], api_key: ENV['MADMIMI_API_KEY'] }
+    super
   end
 
 
-  # Accessors
-  attr_accessor :email, :captcha
+  # Model attributes
+  attributes :email, :captcha
 
 
   # Validations
@@ -17,14 +19,13 @@ class MailingListSubscription < MadMimi
   validates :captcha, absence: true
   
   
+  def subscribe
+    return false unless valid?
+    add_to_list(self.email, ENV['MADMIMI_DEFAULT_LIST'])
+  end
   
-  class << self
-    def subscribe(email, list=ENV['MADMIMI_DEFAULT_LIST'])
-      self.new.add_to_list(email, list)
-    end
-    
-    def unsubscribe(email, list=ENV['MADMIMI_DEFAULT_LIST'])
-      self.new.remove_from_list(email, list)
-    end
+  def unsubscribe
+    return false unless valid?
+    remove_from_list(self.email, ENV['MADMIMI_DEFAULT_LIST'])
   end
 end

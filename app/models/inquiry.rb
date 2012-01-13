@@ -18,7 +18,7 @@ validates :description, presence: true
   protected
   
   def sign_up_for_mailing_list
-    MailingListSubscription.subscribe(email) if mailing_list
+    MailingListSubscription.subscribe({ email: email }) if mailing_list
   end
     
 end

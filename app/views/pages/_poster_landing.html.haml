@@ -3,7 +3,7 @@
 
 
 -# Markup
-%section
+%section#poster_landing
   %header
     %hgroup
       %h1 NEW CARTOGRAPHERS
@@ -41,7 +41,7 @@
   %section#contact
     %header
       %h1 Now accepting inquiries!
-    = simple_form_for(Inquiry.new) do |f|
+    = simple_form_for Inquiry.new do |f|
       = f.input :name,         placeholder: 'First Last'
       = f.input :organization, placeholder: 'Acme Co.'
       = f.input :email,        placeholder: 'john.doe@example.com'
@@ -50,21 +50,14 @@
       = f.input :description,  placeholder: 'What can we do for you?'
       = f.input :mailing_list, as: :boolean, input_html: { checked: true }
       = f.button :submit, 'send'
-      %p= link_to 'Sign up for our Mailing list', '#', id: 'mailing_list'
+      %p= link_to 'Sign up for our Mailing list', '#', id: 'mailing_list_subscription'
       
-    = simple_form_for(MailingListSubscription.new) do |f|
+    = simple_form_for MailingListSubscription.new, html: { hidden: true } do |f|
       = f.input :email, placeholder: 'john.doe@example.com'
-      = f.input :captcha
+      = f.input :captcha, as: :hidden
       = f.button :submit, 'join'
       %p We'll keep you abreast of what's going on leading up to our official site launch. You can expect no more than 2 messages a month.
       %p Seriously. We won't spam you.
-      %p= link_to 'forget it', '#', id: 'inquiries'
+      %p= link_to 'forget it', '#', id: 'inquiry'
   
   %footer
-
-
--#*Notes: 
--#-Agency Social Buttons at the top. Individual Social buttons by the Names/Descriptions.
--#-Inquiry form would  include a drop down for project-type, and fields for Organization, Name, Title, Location, and Project Description
--#-I'd like to set a real deadline for the official site—just to keep us honest. Something attainable, but let's not put it off too far.
--#-Clicking on the Mailing list sign-up button would update the inquiry form to a mailing list sign-up form accompanied by a disclaimer about how often we plan to send updates and what those updates will be about. The button itself will be replaced by two buttons that say something to the tune of  "Yes, Sign me up" and "No Thanks"

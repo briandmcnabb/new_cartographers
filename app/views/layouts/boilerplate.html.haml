@@ -1,0 +1,36 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+%head
+  %meta{ :charset => "utf-8" }/
+  %meta{ 'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1"}/
+  
+  %title= content_for?(:title) ? yield(:title) : "New Cartographers Creative"
+  
+  %meta{ :name => "description", :content => "New Cartographers Creative" }/
+  %meta{ :name => "author", :content => "New Cartographers Creative" }/
+  
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1" }/
+  
+  = stylesheet_link_tag 'application'
+  = yield(:head)
+  = csrf_meta_tags
+  
+  
+%body
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :id => "flash_#{name}"
+  - flash.clear
+  
+  = content_for?(:content) ? yield(:content) : yield
+  
+  
+  = javascript_include_tag 'application'
+  = yield(:javascript)
+  = render 'layouts/ga_snippet'
+  = render 'layouts/chrome_frame_snippet'
+		
+</html>
