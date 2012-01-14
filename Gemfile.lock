@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/briandmcnabb/poro_seasoning.git
+  revision: 6f3762b84f3e4bba304037f31e3dbc826962362d
+  specs:
+    poro_seasoning (0.0.1)
+
+GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: 032565653b98e0790ddd8a070579566eb60a850c
   specs:
@@ -247,6 +253,7 @@ DEPENDENCIES
   madmimi
   newrelic_rpm
   pg
+  poro_seasoning!
   pry
   rails (= 3.1.1)
   responders

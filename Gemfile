@@ -8,6 +8,7 @@ gem 'haml'
 gem 'coffee-filter'
 gem 'jquery-rails'
 
+gem 'poro_seasoning', git: 'git://github.com/briandmcnabb/poro_seasoning.git'
 gem 'inherited_resources'
 gem 'responders'
 gem 'has_scope', '>= 0.5.1'

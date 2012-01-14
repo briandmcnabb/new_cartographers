@@ -1,6 +1,7 @@
 class MailingListSubscription < MadMimi
-  include ActiveModelShim
-  extend  ClassifyInstanceMethods
+  include PoroSeasoning::ActiveModelShiv
+  extend  PoroSeasoning::ClassifyMethods
+  
   
   # Initializer
   def initialize(params={})
