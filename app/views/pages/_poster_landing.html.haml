@@ -1,63 +1,69 @@
 -# Set Variables 
-- est_date = Time.new(2012, 01, 16)
+- est_date = Time.new(2012, 04, 05)
 
 
 -# Markup
 %section#poster_landing
   %header
-    %hgroup
-      %h1 NEW CARTOGRAPHERS
-      %h2 creative agency
-    = time_tag(est_date, est_date.strftime('est. %Y'))
+    %h1
+      #new NEW 
+      #cartographers CARTOGRAPHERS
+    = time_tag(est_date, est_date.strftime('estb. %Y'))
   
   %section#introduction
-    %p We've entered a new Age of Exploration
-    %p The web is our frontier
-    
-    %p the voyage begins
-    %p= time_tag(est_date, est_date.strftime('%m/%d/%y'))
+    %p we've entered a new age of exploration. the web is our frontier.
   
-  %section#crew
-    %header
-      %h1 Our Crew
-    
-    %dl
-      %dt Brian McNabb
-      %dd 
-        %span --
-        %address Brooklyn, New York
-        %p Web-Developer, Businessman, Strategist
-      %dt Matt Owen
-      %dd 
-        %span --
-        %address Little Rock, Arkansas
-        %p Graphic Artist, Posterman, Minimalist
-      %dt Connor McNabb
-      %dd 
-        %span --
-        %address Little Rock, Arkansas
-        %p Copywriter, Web-Designer, Generalist
-  
-  %section#contact
-    %header
-      %h1 Now accepting inquiries!
-    = simple_form_for Inquiry.new do |f|
-      = f.input :name,         placeholder: 'First Last'
-      = f.input :organization, placeholder: 'Acme Co.'
-      = f.input :email,        placeholder: 'john.doe@example.com'
-      = f.input :project_type, label: 'Project Type'
-      = f.input :budget
-      = f.input :description,  placeholder: 'What can we do for you?'
-      = f.input :mailing_list, as: :boolean, input_html: { checked: true }
-      = f.button :submit, 'send'
-      %p= link_to 'Sign up for our Mailing list', '#', id: 'mailing_list_subscription'
+  #column_right
+    %section#crew
+      %header
+        %h1 the crew
       
-    = simple_form_for MailingListSubscription.new, html: { hidden: true } do |f|
-      = f.input :email, placeholder: 'john.doe@example.com'
-      = f.input :captcha, as: :hidden
-      = f.button :submit, 'join'
-      %p We'll keep you abreast of what's going on leading up to our official site launch. You can expect no more than 2 messages a month.
-      %p Seriously. We won't spam you.
-      %p= link_to 'forget it', '#', id: 'inquiry'
+      %dl.clearfix
+        %dt= link_to 'Brian', 'http://twitter.com/briandmcnabb'
+        %dd (web-developer, businessman, strategist)
+        %dt Matt
+        %dd (graphic artist, posterman, minimalist)
+        %dt= link_to 'Connor', 'http://twitter.com/connor_mcnabb'
+        %dd (copywriter, web-designer, generalist)
   
+      %p made with ❤ in brooklyn 
+    
+  #column_left
+    %section#birthday
+      %p voyage begins
+      = time_tag(est_date, est_date.strftime('%m.%d.%y'))
+    
+    %section#contact
+      %header
+        %h1 make an inquiry
+      = simple_form_for Inquiry.new do |f|
+        = f.input :name, placeholder: 'First Last', label: 'name'
+        = f.input :organization, placeholder: 'Acme Co.', label: 'organization'
+        = f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
+        = f.input :budget, label: 'budget'
+        = f.input :project_type, collection: %w(logo branding print web other), as: :check_boxes, label: false
+        = f.input :description,  placeholder: 'What can we do for you?', label: false
+        = f.input :mailing_list, as: :boolean, input_html: { checked: true }, label: 'mailing list'
+        .links
+          = f.button :submit, 'send'
+          %p - or -
+          = link_to '#', id: 'mailing_list_subscription' do
+            %span.font join our
+            %span.script Mailing List
+        
+      = simple_form_for MailingListSubscription.new, html: { hidden: true } do |f|
+        = f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
+        = f.input :captcha, as: :hidden
+        #disclaimer
+          %p we'll keep you abreast of what's going on leading up to our official site launch. 
+          %p no more that twice a month
+        .links
+          = f.button :submit, 'join'
+          %p - or -
+          = link_to '#', id: 'inquiry' do
+            %span.script Forget it
+
+
   %footer
+    #social-buttons
+      

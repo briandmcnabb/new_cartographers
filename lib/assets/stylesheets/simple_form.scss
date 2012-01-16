@@ -1,0 +1,92 @@
+/*
+  CSS style for simple_form gem to use with twitter bootstrap.
+  Code by Michał Taberski
+  https://github.com/michaltaberski/twitter_bootstrap_style_4_simple_form
+*/
+
+$margin: 0px;
+$label_width: 150px;
+$element_width: 200px;
+
+.simple_form{
+  .input{
+    margin-bottom: 18px;
+    margin-left: $margin;
+  }
+  .left_margin{
+    margin-left: $margin + $label_width + 15px;
+  }
+  input{
+    width: $element_width;
+    margin-left: $margin;
+  }
+  input.btn{
+    margin-left: $margin + $label_width + 15px;
+    width: auto;
+  }
+  label{
+    margin-right: 15px;
+    width: $label_width;
+    font-weight: bold;
+    abbr {
+      color: red;
+    }
+  }
+  textarea{
+    width: $element_width;
+    height: 150px;
+  }
+  select{
+    width: $element_width;
+  }
+  .form_footer{
+    background: whiteSmoke;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding: 17px 20px 18px 0;
+    border-top: 1px solid #DDD;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+  }
+  legend {
+    padding-left: $margin + $label_width + 15px !important;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 19.5px;
+    line-height: 1;
+    color: #404040;
+  }
+  .full-width{
+    width: 100%;
+  }
+  &.form-stacked{
+    padding-left: 0; 
+    .input{
+      margin-left: 0;
+    } 
+    input.btn{
+      margin-left: 0;
+      width: auto;
+    }
+    legend {
+      margin-left: 0;
+    }
+  }
+}
+
+.alert-message.block-message.error{
+  legend{
+    color: #9D261D;
+  }
+  p{
+    padding-bottom: 10px;
+  }
+}
+
+
+.info{
+  legend{
+    color: #0064CD;
+  }
+}

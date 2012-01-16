@@ -21,9 +21,9 @@
   
   
 %body
-  - flash.each do |name, msg|
-    = content_tag :div, msg, :id => "flash_#{name}"
-  - flash.clear
+  -#- flash.each do |name, msg|
+  -#  = content_tag :div, msg, :id => "flash_#{name}"
+  -#- flash.clear
   
   = content_for?(:content) ? yield(:content) : yield
   
