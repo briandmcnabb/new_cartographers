@@ -3,19 +3,13 @@ body {
 	color: hsla(48, 5.3763%, 18.2353%, 1);
 }
 
-a { 
-	color: hsla(48, 5.3763%, 18.2353%, 1); 
-  -webkit-transition: color 0.3s ease-in-out;  
-     -moz-transition: color 0.3s ease-in-out;  
-      -ms-transition: color 0.3s ease-in-out;  
-       -o-transition: color 0.3s ease-in-out;  
-          transition: color 0.3s ease-in-out;
-}
+a {	color: hsla(48, 5.3763%, 18.2353%, 1); }
 a:visited { color: hsla(48, 5.3763%, 18.2353%, 1); }
 a:hover { color: #d14b3a; }
 
 
 section#poster_landing {
+	position: relative;
 	margin: -16px auto;
 	width: 960px;
 	>header {
@@ -130,13 +124,25 @@ section#poster_landing {
 }
 section#introduction {
 	p {
-		margin: 20px 0 175px;
+		margin: 20px 0 100px;
+		padding-bottom: 25px;
+		border-bottom: 5px double hsla(210, 2.8986%, 72.9412%, 1);
 		text-align: center;
 		font: 3em 'blanch_cap';
 		span.char1, span.char7, span.char17, span.char21, span.char28, span.char41, span.char45, span.char52, span.char56 {
 			font-family: 'blanch_condensed';
 		}
 	}
+}
+section#poster_landing:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -60px;
+	right: 60px;
+	height: 42px;
+	width: 42px;
+	background: image-url('nc-lettermark.png') center center no-repeat;	
 }
 section#crew {
 	margin: 0 auto;
@@ -169,6 +175,9 @@ section#crew {
 		font: 1.35em 'aldine';
 	}
 }
+section#crew:hover {
+	background: image-url('decklamp.png') top center no-repeat, image-url('glow.png') top center no-repeat;
+}
 section#birthday {
 	width: 95%;
 	p{ font: 2.5em 'aldine'; }
@@ -177,7 +186,7 @@ section#birthday {
 		font: 7.25em/.3 'pompadour';
 	}
 }
-section#contact {
+section#inquiry, section#mailing_list_signup {
 	width: 95%;
 	header {
 		h1 {
@@ -295,17 +304,26 @@ section#contact {
 				text-align: center;
 			}
 		}
-		a#inquiry span.script {
-			padding: 14px 0 13px;
-		}
 	}
-	#disclaimer {
-		width: 50%;
-		margin-left: 55%;
-		padding-left: 5px;
-		border-left: 5px solid hsla(40, 2.9703%, 60.3922%, 1);
-		p {
+	.mailing_list_subscription {
+		label{
+			display: inline-block;
+			padding-right: 10px;
+		}
+		input[type='email'] {
+			width: 71%;
+			padding-bottom: 6px;
+		}
+		span.script { padding: 14px 0 13px; }
+		fieldset {
+			float: none;
+			width: 100%;
+			margin: 50px 0 30px;
+			text-align: center;
+		}
+		>p {
 			width: 90%;
+			margin: 10px auto;
 			color: hsla(50, 2.8302%, 41.5686%, 1);
 			font: 1.5em/1.25 'blanch_condensed';
 			text-align: center;
@@ -319,11 +337,18 @@ section#contact {
 	margin-bottom: 90px;
 }
 #column_left {
+	position: relative;
 	margin-left: -100%;
-	border-right: 5px double hsla(210, 2.8986%, 72.9412%, 1);
-	-webkit-border-right-image: image-url('dot.png') 19 repeat;
-		 -moz-border-right-image: image-url('dot.png') 19 repeat;
-					border-right-image: image-url('dot.png') 19 repeat;				
+}
+#column_left:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: -9px;
+	height: 102%;
+	width: 19px;
+	background: image-url('dot.png') top center repeat-y;
 }
 #column_right {
 	margin-left: 50%;

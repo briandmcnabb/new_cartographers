@@ -5,8 +5,8 @@
 /* TEAM */
   Developer: Brian McNabb
   Designer: Matt Owen
-  Copy: Connor McNabb
-  Site: new_cartographers.com
+  Copywriter/Designer: Connor McNabb
+  Site: new-cartographers.com
   Twitter: @newcartographers
   Location: Brooklyn, NY & Little Rock, AR
 

@@ -4,7 +4,7 @@ jQuery ($)->
 	$('a#inquiry, a#mailing_list_subscription').click(
 		(event)->
 			event.preventDefault()
-			$('form.inquiry, form.mailing_list_subscription').toggle()
+			$('section#inquiry, section#mailing_list_signup').toggle()
 	) 
 	
 	
