@@ -7,7 +7,7 @@ load(File.expand_path('../heroku_env.rb', __FILE__))
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require *Rails.groups(:assets => %w(development test))
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
@@ -19,7 +19,7 @@ module NewCartographers
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    Dir.glob("#{config.root}/app/models/*[^(.rb|.ignore)]").each{|dir| config.autoload_paths << dir }
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -47,5 +47,8 @@ module NewCartographers
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Force application to not access the DB or load models when precompiling assets
+    config.assets.initialize_on_precompile = false
   end
 end
