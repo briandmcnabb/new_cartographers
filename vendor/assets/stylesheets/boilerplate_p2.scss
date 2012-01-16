@@ -31,9 +31,11 @@
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
-
+	footer { 
+		position: absolute;
+	}
 }
 
 @media only screen and (min-width: 768px) {
