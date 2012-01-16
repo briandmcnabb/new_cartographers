@@ -9,6 +9,7 @@
  *= require boilerplate_p2
 */
 
+/*
 @font-face {
 	font-family: 'aldine';
 	src: font-url('aldine-webfont.eot');
@@ -65,6 +66,71 @@
 	src: local('☺'), font-url('wisdom_script-webfont.woff') format('woff'), 
 					 font-url('wisdom_script-webfont.ttf') format('truetype'),
 					 font-url('wisdom_script-webfont.svg#webfontOfIwU6Fp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+*/
+
+
+
+@font-face {
+	font-family: 'aldine';
+	src: url('/aldine-webfont.eot');
+	src: local('☺'), url('/aldine-webfont.woff') format('woff'), 
+					 url('/aldine-webfont.ttf') format('truetype'),
+					 url('/aldine-webfont.svg#webfontOfIwU6Fp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'blanch_cap';
+	src: url('/blanch_cap-webfont.eot');
+	src: local('☺'), url('/blanch_cap-webfont.woff') format('woff'), 
+					 url('/blanch_cap-webfont.ttf') format('truetype'),
+					 url('/blanch_cap-webfont.svg#webfontOfIwU6Fp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'blanch_condensed';
+	src: url('/blanch_condensed-webfont.eot');
+	src: local('☺'), url('/blanch_condensed-webfont.woff') format('woff'), 
+					 url('/blanch_condensed-webfont.ttf') format('truetype'),
+					 url('/blanch_condensed-webfont.svg#webfontOfIwU6Fp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pompadour';
+	src: url('/pompadour-webfont.eot');
+	src: local('☺'), url('/pompadour-webfont.woff') format('woff'), 
+					 url('/pompadour-webfont.ttf') format('truetype'),
+					 url('/pompadour-webfont.svg#webfontOfIwU6Fp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'tommaso';
+	src: url('/tommaso-webfont.eot');
+	src: local('☺'), url('/tommaso-webfont.woff') format('woff'), 
+					 url('/tommaso-webfont.ttf') format('truetype'),
+					 url('/tommaso-webfont.svg#webfontOfIwU6Fp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'wisdom_script';
+	src: url('/wisdom_script-webfont.eot');
+	src: local('☺'), url('/wisdom_script-webfont.woff') format('woff'), 
+					 url('/wisdom_script-webfont.ttf') format('truetype'),
+					 url('/wisdom_script-webfont.svg#webfontOfIwU6Fp') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

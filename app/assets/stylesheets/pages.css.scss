@@ -224,27 +224,27 @@ section#inquiry, section#mailing_list_signup {
 		color: hsla(50, 2.8302%, 41.5686%, 1);
 		font: 1.6em 'blanch_condensed';
 	}
-	fieldset:nth-of-type(1) {
+	.name fieldset {
 		width: 46%;
 		float: left;
 		margin-right: 4%;				
 	}
-	fieldset:nth-of-type(2) {
+	.organization fieldset {
 		width: 46%;
 		float: left;
 		margin-left: 4%;
 	}
-	fieldset:nth-of-type(3) {
+	.email fieldset {
 		width: 71%;
 		float: left;
 		margin-right: 4%;
 	}
-	fieldset:nth-of-type(4) {
+	.budget fieldset {
 		width: 21%;
 		float: left;
 		margin-left: 4%;
 	}
-	fieldset:nth-of-type(5) {
+	.project fieldset {
 		width: 100%;
 		padding: 3px 0;
 	}
@@ -268,10 +268,10 @@ section#inquiry, section#mailing_list_signup {
 			position: absolute;
 			top: 0;
 			left: 0;
-			height: auto;
+			height: 69px;
 			width: 43%;
 			margin: 0;
-			padding: 24px 0 18px; 
+			padding: auto 0; 
 			background: hsla(48, 3.9370%, 24.9020%, 1);
 			color: hsla(43, 21.2121%, 93.5294%, 1);
 			font: 2.5em 'aldine';

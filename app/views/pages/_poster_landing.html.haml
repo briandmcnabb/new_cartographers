@@ -37,13 +37,17 @@
       %header
         %h1 make an inquiry
       = simple_form_for Inquiry.new do |f|
-        = f.input :name, placeholder: 'First Last', label: 'name'
-        = f.input :organization, placeholder: 'Acme Co.', label: 'organization'
-        = f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
-        = f.input :budget, label: 'budget'
-        = f.input :project_type, collection: %w(logo branding print web other), as: :check_boxes, label: false
-        = f.input :description,  placeholder: 'What can we do for you?', label: false
-        = f.input :mailing_list, as: :boolean, input_html: { checked: true }, label: 'mailing list'
+        .clearfix
+          .name= f.input :name, placeholder: 'First Last', label: 'name'
+          .organization= f.input :organization, placeholder: 'Acme Co.', label: 'organization'
+        .clearfix
+          .email= f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
+          .budget= f.input :budget, label: 'budget'
+        .clearfix
+          .project= f.input :project_type, collection: %w(logo branding print web other), as: :check_boxes, label: false
+        .clearfix
+        .description= f.input :description,  placeholder: 'What can we do for you?', label: false
+        .mailing_list= f.input :mailing_list, as: :boolean, input_html: { checked: true }, label: 'mailing list'
         .links
           = f.button :submit, 'send'
           %p - or -
