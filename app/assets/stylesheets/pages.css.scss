@@ -6,6 +6,7 @@ body {
 a {	color: hsla(48, 5.3763%, 18.2353%, 1); }
 a:visited { color: hsla(48, 5.3763%, 18.2353%, 1); }
 a:hover { color: #d14b3a; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 
 section#poster_landing {
@@ -132,6 +133,8 @@ section#poster_landing {
 		background: image-url('brackets.png') bottom center no-repeat;
 	}
 }
+
+
 section#introduction {
 	p {
 		margin: 20px 0 100px;
@@ -144,6 +147,8 @@ section#introduction {
 		}
 	}
 }
+
+
 section#crew {
 	margin: 0 auto;
 	background: image-url('decklamp.png') top center no-repeat;
@@ -178,6 +183,9 @@ section#crew {
 section#crew:hover {
 	background: image-url('decklamp.png') top center no-repeat, image-url('glow.png') top center no-repeat;
 }
+
+
+
 section#birthday {
 	width: 95%;
 	p{ font: 2.5em 'aldine'; }
@@ -186,6 +194,8 @@ section#birthday {
 		font: 7.25em/.3 'pompadour';
 	}
 }
+
+
 section#inquiry, section#mailing_list_signup {
 	width: 95%;
 	header {
