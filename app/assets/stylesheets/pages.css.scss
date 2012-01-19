@@ -46,7 +46,7 @@ section#poster_landing { width: 960px; margin: -16px auto;
 	>header {
 		margin-top: 90px;
 		padding: 45px 0 80px;
-		//background: $astrolabel;
+		background: $astrolabel;
 		h1 { position: relative; margin: 0; text-align: center; font-family: 'tommaso';
 			div#new {	 position: relative; display: inline-block; margin-top: 25px; font-size: 3.5em; }
 			div#new:before, div#new:after { content: ""; display: block; position: absolute; top: 20px; height: 51px; width: 25px; }
