@@ -80,12 +80,43 @@ section#poster_landing { width: 960px; margin: -16px auto;
 	footer { position:fixed; left:0px; bottom:0px; height:30px; width:100%; background: $wifi-waves; }
 	* html #footer { position:absolute; top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px'); }
 }
-.no-textshadow section#poster_landing >header h1, .no-fontface section#poster_landing >header h1 { 
-	display: block; text-indent: -999em; overflow: hidden; background: $logo; 
+
+.lt-ie10 {
+	section#poster_landing {
+		#new { font-size: 2.84em; };
+		#cartographers { font-size: 7.3em;
+			span.char1, span.char13 { font-size: 1.1.75em; }
+		}
+	}
 }
-.no-textshadow section#poster_landing:after, .no-fontface section#poster_landing:after { 
-	content: ''; display: block; position: absolute; top: 24px; right: 60px; height: 42px; width: 42px; background: $lettermark; 
+
+.lt-ie9 {
+	section#poster_landing {
+		#cartographers:after,
+		#cartographers .char1:after,
+		#cartographers .char13:after { content:''; background: transparent; top: 0; left: 0; }
+	}
 }
+
+.lt-ie8 {
+	section#poster_landing {
+		#new { padding-top: 20px; line-height: 1; };
+		#cartographers { margin-bottom: 15px; line-height: 1;
+			span.char1, span.char13 { line-height: 1; }
+			span.char1 { left: -0.3em; }
+			span.char13 { right: -0.3em; }
+		}
+	}
+}
+
+
+
+//.no-textshadow section#poster_landing >header h1, .no-fontface section#poster_landing >header h1 { 
+//	display: block; text-indent: -999em; overflow: hidden; background: $logo; font-size: 0em; min-height: 294px; padding-top: 80px; margin-bottom: -55px;
+//}
+//.no-textshadow section#poster_landing:after, .no-fontface section#poster_landing:after { 
+//	content: ''; display: block; position: absolute; top: 24px; right: 60px; height: 42px; width: 42px; background: $lettermark; 
+//}
 
 
 
@@ -133,8 +164,8 @@ section#crew:hover { background: $decklamp, $glow; }
 ////////////////////////////////////////////////////////////////////////////////
 
 section#birthday { width: 95%;
-	p{ font: 2.5em 'aldine'; }
-	time { color: $dark-gray; font: 7.25em/.3 'pompadour'; }
+	p{ margin-bottom: 0; font: 2.5em 'aldine'; }
+	time { display: block; margin-top: -5px; color: $dark-gray; font: 7.25em 'pompadour'; }
 }
 
 
@@ -143,7 +174,7 @@ section#birthday { width: 95%;
 ////////////////////////////////////////////////////////////////////////////////
 // Inquiry & Mailing List Signup 
 ////////////////////////////////////////////////////////////////////////////////
-section#inquiry, section#mailing_list_signup { width: 95%;
+section#inquiry, section#mailing_list_signup { width: 95%; margin-top: -22px;
 	header {
 		h1 { position: relative; margin: 10px 0; text-align: center; font: 2.5em 'blanch_condensed'; }
 		h1:before, h1:after { content: ""; display: block; position: absolute; top: 7px; height: 23px; width: 136px; }
@@ -194,7 +225,7 @@ section#inquiry {
 	.project fieldset { width: 100%; padding: 3px 0; }
 	input, textarea { width: 100%; background-color: $dark-off-white; }
 	input[type="checkbox"] { width: auto; }
-	label.collection_check_boxes { margin-right: 40px; }
+	label.collection_check_boxes { margin-right: 39px; }
 	textarea { height: 125px; }
 
 }

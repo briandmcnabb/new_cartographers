@@ -9,4 +9,4 @@ jQuery ($)->
 	
 	
 	# Lettering.js
-	$('div#cartographers, section#introduction p').lettering() if Modernizr.fontface && Modernizr.textshadow
+	$('div#cartographers, section#introduction p').lettering() if Modernizr.fontface
