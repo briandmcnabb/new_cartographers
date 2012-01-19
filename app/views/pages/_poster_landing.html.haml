@@ -1,12 +1,12 @@
 -# Set Variables 
 - est_date = Time.new(2012, 04, 05)
 
-
 -# Markup
 %section#poster_landing.clearfix
   %header
     %h1
-      #new NEW 
+      #new NEW
+      %br 
       #cartographers CARTOGRAPHERS
     = time_tag(est_date, est_date.strftime('estb. %Y'))
   
@@ -50,7 +50,7 @@
         .mailing_list= f.input :mailing_list, as: :boolean, input_html: { checked: true }, label: 'mailing list'
         .links
           = f.button :submit, 'send'
-          %p - or -
+          %span - or -
           = link_to '#', id: 'mailing_list_subscription' do
             %span.font join our
             %span.script Mailing List
@@ -65,7 +65,7 @@
         = f.input :captcha, as: :hidden  
         .links
           = f.button :submit, 'join'
-          %p - or -
+          %span - or -
           = link_to '#', id: 'inquiry' do
             %span.script Forget it
 

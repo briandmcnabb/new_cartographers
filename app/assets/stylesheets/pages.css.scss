@@ -1,147 +1,96 @@
-body {
-	background: hsla(43, 21.2121%, 93.5294%, 1);
-	color: hsla(48, 5.3763%, 18.2353%, 1);
-}
+///// Colors /////
+$off-white: hsla(43, 21.2121%, 93.5294%, 1);
+$dark-off-white: hsla(43, 11.1111%, 87.6471%, 1);
+$black: hsla(48, 5.3763%, 18.2353%, 1);
+$red: #d14b3a;
+$shadow-gray: hsla(42, 6.2500%, 68.6275%, 1.0000);
+$dark-gray: hsla(50, 2.8302%, 41.5686%, 1);
+$light-gray: hsla(210, 2.8986%, 72.9412%, 1);
+$brown-gray: hsla(48, 3.9370%, 24.9020%, 1);
 
-a {	color: hsla(48, 5.3763%, 18.2353%, 1); }
-a:visited { color: hsla(48, 5.3763%, 18.2353%, 1); }
-a:hover { color: #d14b3a; }
+///// Images /////
+$astrolabel: image-url('astrolabel.png') top center no-repeat; 
+$brackets: image-url('brackets.png');
+$dot: image-url('dot.png') top center repeat-y;
+$decklamp: image-url('decklamp.png') top center no-repeat;
+$fancybar: image-url('fancybar.png');
+$glow: image-url('glow.png') top center no-repeat;
+$hashes: image-url('hashes.png');
+$lettermark: image-url('nc-lettermark.png') center center no-repeat;
+$logo: image-url('logo.png') center center no-repeat;
+$wifi-waves: image-url('wifiwaves.png') repeat;
+
+
+
+body { background: $off-white; color: $black; }
+a, a:link, a:visited {	color: $black; 
+	-webkit-transition: color .2s ease-in-out;  
+     -moz-transition: color .2s ease-in-out;  
+    	-ms-transition: color .2s ease-in-out; 
+    	 -o-transition: color .2s ease-in-out;   
+    			transition: color .2s ease-in-out;
+}
+a:hover { color: $red; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 
-section#poster_landing {
-	width: 960px;
-	margin: -16px auto;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Poster Landing
+////////////////////////////////////////////////////////////////////////////////
+
+section#poster_landing { width: 960px; margin: -16px auto;
+
+	//// Header /////
 	>header {
 		margin-top: 90px;
 		padding: 45px 0 80px;
-		background: image-url('astrolabel.png') top center no-repeat;
-		h1 {
-			position: relative;
-			margin: 0;
-			text-align: center;
-			font-family: 'tommaso';
-			
-			// div#new Variables
-			$padding-top: 25px;
-			$hash-top: 20px;
-			
-			div#new {	
-				position: relative;
-				padding-top: $padding-top;
-				font-size: 3.5em;
+		//background: $astrolabel;
+		h1 { position: relative; margin: 0; text-align: center; font-family: 'tommaso';
+			div#new {	 position: relative; display: inline-block; margin-top: 25px; font-size: 3.5em; }
+			div#new:before, div#new:after { content: ""; display: block; position: absolute; top: 20px; height: 51px; width: 25px; }
+			div#new:before { left: -28px; background: $hashes top left no-repeat; }
+			div#new:after { right: -28px; background: $hashes top right no-repeat; }
+			div#cartographers { position: relative; display: inline-block; margin-top: -30px; font-size: 9em; text-shadow: 2px 2px 0 $off-white;
+				span { display: inline-block; }
+				span.char1, span.char13 { position: absolute; font-size: 1.175em; }
+				span.char1:after, span.char13:after { position: absolute; top: 5px; left: 6px; color: $shadow-gray; text-shadow: none; z-index: -5;	}
+				span.char1 { top: -7px; left: -0.375em; }
+				span.char1:after { content: 'C'; }
+				span.char13  { top: -7px; right: -0.375em; }
+				span.char13:after { content: 'S'; }
 			}
-			div#new:before {
-				position: absolute;
-				content: "";
-				display: block;
-				top: $padding-top + $hash-top;
-				left: 405px; 
-				height: 51px;
-				width: 25px;
-				background: image-url('hashes.png') top left no-repeat;
-			}
-			div#new:after {
-				position: absolute;
-				content: "";
-				display: block;
-				top: $padding-top + $hash-top;
-				right: 405px;
-				height: 51px;
-				width: 25px;
-				background: image-url('hashes.png') top right no-repeat;
-			}
-			div#cartographers {
-				position: relative;
-				display: inline-block;
-				margin-top: -30px;
-				font-size: 9em;
-				text-shadow: 2px 2px 0 hsla(43, 21.2121%, 93.5294%, 1);
-				span {
-					display: inline-block;
-				}
-				span.char1, span.char13 {
-					position: absolute;
-					font-size: 1.175em;
-				}
-				span.char1 {
-					top: -7px;
-					left: -0.375em;
-				}
-				span.char13  {
-					top: -7px;
-					right: -0.375em;
-				}
-				span.char1:after {
-					position: absolute;
-					content: 'C';
-					top: 5px;
-					left: 6px;
-					color: hsla(42, 6.2500%, 68.6275%, 1.0000);
-					text-shadow: none;
-					z-index: -5;					
-				}
-				span.char13:after {
-					position: absolute;
-					content: 'S';
-					top: 5px;
-					left: 6px;
-					color: hsla(42, 6.2500%, 68.6275%, 1.0000);
-					text-shadow: none;
-					z-index: -5;					
-				}
-			}
-			div#cartographers:after {
-				position: absolute;
-				content: 'ARTOGRAPHER';
-				top: 5px;
-				left: 6px;
-				color: hsla(42, 6.2500%, 68.6275%, 1.0000);
-				text-shadow: none;
-				z-index: -5;
-			}
+			div#cartographers:after { position: absolute; content: 'ARTOGRAPHER'; top: 5px; left: 6px; color: $shadow-gray; text-shadow: none; z-index: -5; }
 		}
-		h1:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: -130px;
-			right: 60px;
-			height: 42px;
-			width: 42px;
-			background: image-url('nc-lettermark.png') center center no-repeat;
-		}
-		time {
-			display: block;
-			margin-top: -25px;
-			text-align: center;
-			font: 2.75em 'blanch_cap';
-		}
+		h1:after { content: ''; display: block; position: absolute; top: -130px; right: 60px; height: 42px; width: 42px; background: $lettermark; }
+		time { display: block; margin-top: -25px; text-align: center; font: 2.75em 'blanch_cap'; }
 	}
-	>header:before {
-		content: "";
-		display: block;
-		height: 25px;
-		width: 100%;
-		background: image-url('brackets.png') top center no-repeat;
-	}
-	>header:after {
-		content: "";
-		display: block;
-		height: 25px;
-		width: 100%;
-		background: image-url('brackets.png') bottom center no-repeat;
-	}
+	>header:before, >header:after { content: ""; display: block; height: 25px; width: 100%; }
+	>header:before { background: $brackets top center no-repeat; }
+	>header:after { background: $brackets bottom center no-repeat; }
+	
+	//// Columns /////
+	#column_left, #column_right { float: left; min-height: 600px; width: 50%; margin-bottom: 90px; }
+	#column_left { position: relative; margin-left: -100%; }
+	#column_left:after { content: ""; display: block; position: absolute; top: 0; right: -9px; height: 102%; width: 19px; background: $dot; }
+	#column_right { margin-left: 50%; }
+	
+	//// Footer /////
+	footer { position:fixed; left:0px; bottom:0px; height:30px; width:100%; background: $wifi-waves; }
+	* html #footer { position:absolute; top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px'); }
 }
+.no-textshadow section#poster_landing >header h1 { display: block; text-indent: -999em; overflow: hidden; background: $logo; }
+.no-textshadow section#poster_landing:after { content: ''; display: block; position: absolute; top: 24px; right: 60px; height: 42px; width: 42px; background: $lettermark; }
 
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Introduction 
+////////////////////////////////////////////////////////////////////////////////
 
 section#introduction {
-	p {
-		margin: 20px 0 100px;
-		padding-bottom: 25px;
-		border-bottom: 5px double hsla(210, 2.8986%, 72.9412%, 1);
-		text-align: center;
-		font: 3em 'blanch_cap';
+	p { margin: 20px 0 100px; padding-bottom: 25px; border-bottom: 5px double $light-gray; text-align: center; font: 3em 'blanch_cap';
 		span.char1, span.char7, span.char17, span.char21, span.char28, span.char41, span.char45, span.char52, span.char56 {
 			font-family: 'blanch_condensed';
 		}
@@ -149,234 +98,119 @@ section#introduction {
 }
 
 
-section#crew {
-	margin: 0 auto;
-	background: image-url('decklamp.png') top center no-repeat;
-	header {
-		margin-top: 40px;
-		padding-top: 130px;
-		h1 {
-			margin: 15px 0 30px;
-			font: 7em 'blanch_condensed';
-			text-align: center;
-		}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Crew 
+////////////////////////////////////////////////////////////////////////////////
+
+section#crew { margin: 0 auto; background: $decklamp;
+	-webkit-transition: background .2s ease-in-out;  
+     -moz-transition: background .2s ease-in-out;  
+    	-ms-transition: background .2s ease-in-out; 
+    	 -o-transition: background .2s ease-in-out;   
+    			transition: background .2s ease-in-out;
+	header { margin-top: 40px; padding-top: 130px;
+		h1 { margin: 15px 0 30px; font: 7em 'blanch_condensed'; text-align: center; }
 	}
-	dl {
-		width: 78%;
-		margin-left: 15%;
-		dt {
-			padding: 5px 0;
-			font: 2.25em 'wisdom_script';				
-		}
-		dd {
-			margin-top: 15px;
-			padding: 5px 0;
-			font: 1.25em 'wisdom_script';
-		}
+	dl { width: 78%; margin-left: 15%;
+		dt { padding: 5px 0; font: 2.25em 'wisdom_script'; }
+		dd { margin-top: 15px; padding: 5px 0; font: 1.25em 'wisdom_script'; }
 	}
-	p {
-		margin: 70px 0 0 15px;
-		text-align: center;
-		font: 1.35em 'aldine';
-	}
+	p { margin: 70px 0 0 15px; font: 1.35em 'aldine'; text-align: center; }
 }
-section#crew:hover {
-	background: image-url('decklamp.png') top center no-repeat, image-url('glow.png') top center no-repeat;
-}
+section#crew:hover { background: $decklamp, $glow; }
 
 
 
-section#birthday {
-	width: 95%;
+
+////////////////////////////////////////////////////////////////////////////////
+// Birthday 
+////////////////////////////////////////////////////////////////////////////////
+
+section#birthday { width: 95%;
 	p{ font: 2.5em 'aldine'; }
-	time {
-		color: hsla(50, 2.8302%, 41.5686%, 1);
-		font: 7.25em/.3 'pompadour';
-	}
+	time { color: $dark-gray; font: 7.25em/.3 'pompadour'; }
 }
 
 
-section#inquiry, section#mailing_list_signup {
-	width: 95%;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Inquiry & Mailing List Signup 
+////////////////////////////////////////////////////////////////////////////////
+section#inquiry, section#mailing_list_signup { width: 95%;
 	header {
-		h1 {
-			position: relative;
-			margin: 10px 0;
-			text-align: center;
-			font: 2.5em 'blanch_condensed';
+		h1 { position: relative; margin: 10px 0; text-align: center; font: 2.5em 'blanch_condensed'; }
+		h1:before, h1:after { content: ""; display: block; position: absolute; top: 7px; height: 23px; width: 136px; }
+		h1:before { left: 0; background: $fancybar top left no-repeat; }
+		h1:after { right: 0; background: $fancybar top right no-repeat; }
+	}
+	form { width: 95%; }
+	label { color: $dark-gray; font: 1.6em 'blanch_condensed'; }
+	.links { position: relative; width: 100%;
+		>span { display: block; width: 103%; margin: 0 1%; padding: 20px 0 50px; color: $dark-gray; font: 2.15em 'blanch_condensed'; text-align: center; }
+		input[type="submit"], a, a:link, a:visited { position: absolute; top: 0; height: 69px; width: 43%; background: $brown-gray; color: $off-white;
+			-webkit-transition: background-color .2s ease-in-out;  
+		     -moz-transition: background-color .2s ease-in-out;  
+		    	-ms-transition: background-color .2s ease-in-out;
+		    	 -o-transition: background-color .2s ease-in-out;    
+		    			transition: background-color .2s ease-in-out;
 		}
-		h1:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 7px;
-			left: 0;
-			height: 23px;
-			width: 136px;
-			background: image-url('fancybar.png') top left no-repeat;
+		input[type="submit"]:hover, a:hover { background-color: $red; }
+		input[type="submit"]:active, a:active {
+		  -webkit-transform: scale(0.99);  
+		     -moz-transform: scale(0.99);  
+		      -ms-transform: scale(0.99);  
+		       -o-transform: scale(0.99);  
+		          transform: scale(0.99);
 		}
-		h1:after {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 7px;
-			right: 0;
-			height: 23px;
-			width: 136px;
-			background: image-url('fancybar.png') top right no-repeat;
-		}
-	}
-	form {
-		width: 95%;
-	}
-	label {
-		display: block;
-		color: hsla(50, 2.8302%, 41.5686%, 1);
-		font: 1.6em 'blanch_condensed';
-	}
-	.name fieldset {
-		width: 46%;
-		float: left;
-		margin-right: 4%;				
-	}
-	.organization fieldset {
-		width: 46%;
-		float: left;
-		margin-left: 4%;
-	}
-	.email fieldset {
-		width: 71%;
-		float: left;
-		margin-right: 4%;
-	}
-	.budget fieldset {
-		width: 21%;
-		float: left;
-		margin-left: 4%;
-	}
-	.project fieldset {
-		width: 100%;
-		padding: 3px 0;
-	}
-	input, textarea {
-		width: 100%;
-		background-color: hsla(43, 11.1111%, 87.6471%, 1);
-	}
-	input[type="checkbox"] {
-		width: auto;
-	}
-	label.collection_check_boxes {
-	  margin-right: 40px;
-	}
-	textarea {
-		height: 125px;
-	}
-	.links {
-		position: relative;
-		width: 100%;
-		input[type="submit"] {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 69px;
-			width: 43%;
-			margin: 0;
-			padding: auto 0; 
-			background: hsla(48, 3.9370%, 24.9020%, 1);
-			color: hsla(43, 21.2121%, 93.5294%, 1);
-			font: 2.5em 'aldine';
-		}
-		p {
-			width: 103%;
-			margin: 0 1%;
-			padding: 20px 0 50px;
-			color: hsla(50, 2.8302%, 41.5686%, 1);
-			font: 2.15em 'blanch_condensed';
-			text-align: center;
-		}
-		a {
-			position: absolute;
-			top: 0;
-			right: -4%;
-			display: inline-block;
-			width: 43%;
-			background: hsla(48, 3.9370%, 24.9020%, 1);
-			color: hsla(43, 21.2121%, 93.5294%, 1);
-			span.font {
-				display: block;			
-				font: 2em 'blanch_condensed';
-				text-align: center;
-			}
-			span.script {
-				display: block;
-				margin-bottom: -3;
-				font: 2.5em 'wisdom_script';
-				text-align: center;
-			}
+		input[type="submit"] { left: 0; margin: 0; padding: auto 0; font: 2.5em 'aldine'; }	
+		a { right: -4%; display: inline-block;
+			span { display: block; text-align: center; }
+			span.font { font: 2em 'blanch_condensed'; }
+			span.script { margin-bottom: -3; font: 2.5em 'wisdom_script'; }
 		}
 	}
-	.mailing_list_subscription {
-		label{
-			display: inline-block;
-			padding-right: 10px;
-		}
-		input[type='email'] {
-			width: 71%;
-			padding-bottom: 6px;
-		}
-		span.script { padding: 14px 0 13px; }
-		fieldset {
-			float: none;
-			width: 100%;
-			margin: 50px 0 30px;
-			text-align: center;
-		}
-		>p {
-			width: 90%;
-			margin: 10px auto;
-			color: hsla(50, 2.8302%, 41.5686%, 1);
-			font: 1.5em/1.25 'blanch_condensed';
-			text-align: center;
-		}
-	}
+	
 }
-#column_left, #column_right {
-	float: left;
-	min-height: 600px;
-	width: 50%;
-	margin-bottom: 90px;
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Inquiry
+////////////////////////////////////////////////////////////////////////////////
+section#inquiry {
+	label { display: block; }
+
+	.name fieldset { width: 46%; float: left; margin-right: 4%; }
+	.organization fieldset { width: 46%; float: left; margin-left: 4%; }
+	.email fieldset { width: 71%; float: left; margin-right: 4%; }
+	.budget fieldset { width: 21%; float: left; margin-left: 4%; }
+	.project fieldset { width: 100%; padding: 3px 0; }
+	input, textarea { width: 100%; background-color: $dark-off-white; }
+	input[type="checkbox"] { width: auto; }
+	label.collection_check_boxes { margin-right: 40px; }
+	textarea { height: 125px; }
+
 }
-#column_left {
-	position: relative;
-	margin-left: -100%;
-}
-#column_left:after {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	right: -9px;
-	height: 102%;
-	width: 19px;
-	background: image-url('dot.png') top center repeat-y;
-}
-#column_right {
-	margin-left: 50%;
-}	
-footer {
-	div#social-buttons {
-		
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Mailing List Signup 
+////////////////////////////////////////////////////////////////////////////////
+section#mailing_list_signup {
+	label { display: inline-block; padding-right: 10px; }
+	input[type='email'] { width: 71%; padding-bottom: 6px; }
+	span.script { padding: 14px 0 13px; }
+	fieldset { margin: 50px 0 30px; text-align: center; }
+	p {
+		width: 90%;
+		margin: 10px auto;
+		color: $dark-gray;
+		font: 1.5em/1.25 'blanch_condensed';
+		text-align: center;
 	}
-}
-footer {
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  height:30px;
-  width:100%;
-  background: image-url('wifiwaves.png') repeat;
-}
-* html #footer {
-  position:absolute;
-  top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+
 }
