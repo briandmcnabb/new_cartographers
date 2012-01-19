@@ -80,8 +80,12 @@ section#poster_landing { width: 960px; margin: -16px auto;
 	footer { position:fixed; left:0px; bottom:0px; height:30px; width:100%; background: $wifi-waves; }
 	* html #footer { position:absolute; top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px'); }
 }
-.no-textshadow section#poster_landing >header h1 { display: block; text-indent: -999em; overflow: hidden; background: $logo; }
-.no-textshadow section#poster_landing:after { content: ''; display: block; position: absolute; top: 24px; right: 60px; height: 42px; width: 42px; background: $lettermark; }
+.no-textshadow section#poster_landing >header h1, .no-fontface section#poster_landing >header h1 { 
+	display: block; text-indent: -999em; overflow: hidden; background: $logo; 
+}
+.no-textshadow section#poster_landing:after, .no-fontface section#poster_landing:after { 
+	content: ''; display: block; position: absolute; top: 24px; right: 60px; height: 42px; width: 42px; background: $lettermark; 
+}
 
 
 
