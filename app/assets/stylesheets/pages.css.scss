@@ -48,23 +48,23 @@ section#poster_landing { width: 960px; margin: -16px auto;
 		padding: 45px 0 80px;
 		background: $astrolabel;
 		h1 { position: relative; margin: 0; text-align: center; font-family: 'tommaso';
-			div#new {	 position: relative; display: inline-block; margin-top: 25px; font-size: 3.5em; }
+			div#new {	 position: relative; display: inline-block; margin-top: 25px; font-size: 262.5%; }
 			div#new:before, div#new:after { content: ""; display: block; position: absolute; top: 20px; height: 51px; width: 25px; }
 			div#new:before { left: -28px; background: $hashes top left no-repeat; }
 			div#new:after { right: -28px; background: $hashes top right no-repeat; }
-			div#cartographers { position: relative; display: inline-block; margin-top: -30px; font-size: 9em; text-shadow: 2px 2px 0 $off-white;
+			div#cartographers { position: relative; display: inline-block; margin-top: -30px; font-size: 675%; text-shadow: 2px 2px 0 $off-white;
 				span { display: inline-block; }
-				span.char1, span.char13 { position: absolute; font-size: 1.175em; }
+				span.char1, span.char13 { position: absolute; font-size: 117.5%; }
 				span.char1:after, span.char13:after { position: absolute; top: 5px; left: 6px; color: $shadow-gray; text-shadow: none; z-index: -5;	}
-				span.char1 { top: -7px; left: -0.375em; }
+				span.char1 { top: -7px; left: -11.15%; }
 				span.char1:after { content: 'C'; }
-				span.char13  { top: -7px; right: -0.375em; }
+				span.char13  { top: -7px; right: -11.15%; }
 				span.char13:after { content: 'S'; }
 			}
 			div#cartographers:after { position: absolute; content: 'ARTOGRAPHER'; top: 5px; left: 6px; color: $shadow-gray; text-shadow: none; z-index: -5; }
 		}
 		h1:after { content: ''; display: block; position: absolute; top: -130px; right: 60px; height: 42px; width: 42px; background: $lettermark; }
-		time { display: block; margin-top: -25px; text-align: center; font: 2.75em 'blanch_cap'; }
+		time { display: block; margin-top: -25px; text-align: center; font: 275% 'blanch_cap'; }
 	}
 	>header:before, >header:after { content: ""; display: block; height: 25px; width: 100%; }
 	>header:before { background: $brackets top center no-repeat; }
@@ -81,15 +81,6 @@ section#poster_landing { width: 960px; margin: -16px auto;
 	* html #footer { position:absolute; top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px'); }
 }
 
-.lt-ie10 {
-	section#poster_landing {
-		#new { font-size: 2.84em; };
-		#cartographers { font-size: 7.3em;
-			span.char1, span.char13 { font-size: 1.1.75em; }
-		}
-	}
-}
-
 .lt-ie9 {
 	section#poster_landing {
 		#cartographers:after,
@@ -103,20 +94,11 @@ section#poster_landing { width: 960px; margin: -16px auto;
 		#new { padding-top: 20px; line-height: 1; };
 		#cartographers { margin-bottom: 15px; line-height: 1;
 			span.char1, span.char13 { line-height: 1; }
-			span.char1 { left: -0.3em; }
-			span.char13 { right: -0.3em; }
+			span.char1 { left: 6.25%; }
+			span.char13 { right: 6.25%; }
 		}
 	}
 }
-
-
-
-//.no-textshadow section#poster_landing >header h1, .no-fontface section#poster_landing >header h1 { 
-//	display: block; text-indent: -999em; overflow: hidden; background: $logo; font-size: 0em; min-height: 294px; padding-top: 80px; margin-bottom: -55px;
-//}
-//.no-textshadow section#poster_landing:after, .no-fontface section#poster_landing:after { 
-//	content: ''; display: block; position: absolute; top: 24px; right: 60px; height: 42px; width: 42px; background: $lettermark; 
-//}
 
 
 
@@ -125,7 +107,7 @@ section#poster_landing { width: 960px; margin: -16px auto;
 ////////////////////////////////////////////////////////////////////////////////
 
 section#introduction {
-	p { margin: 20px 0 100px; padding-bottom: 25px; border-bottom: 5px double $light-gray; text-align: center; font: 3em 'blanch_cap';
+	p { margin: 20px 0 100px; padding-bottom: 25px; border-bottom: 5px double $light-gray; text-align: center; font: 300% 'blanch_cap';
 		span.char1, span.char7, span.char17, span.char21, span.char28, span.char41, span.char45, span.char52, span.char56 {
 			font-family: 'blanch_condensed';
 		}
@@ -146,13 +128,13 @@ section#crew { margin: 0 auto; background: $decklamp;
     	 -o-transition: background .2s ease-in-out;   
     			transition: background .2s ease-in-out;
 	header { margin-top: 40px; padding-top: 130px;
-		h1 { margin: 15px 0 30px; font: 7em 'blanch_condensed'; text-align: center; }
+		h1 { margin: 15px 0 30px; font: 700% 'blanch_condensed'; text-align: center; }
 	}
 	dl { width: 78%; margin-left: 15%;
-		dt { padding: 5px 0; font: 2.25em 'wisdom_script'; }
-		dd { margin-top: 15px; padding: 5px 0; font: 1.25em 'wisdom_script'; }
+		dt { padding: 5px 0; font: 225% 'wisdom_script'; }
+		dd { margin-top: 15px; padding: 5px 0; font: 125% 'wisdom_script'; }
 	}
-	p { margin: 70px 0 0 15px; font: 1.35em 'aldine'; text-align: center; }
+	p { margin: 70px 0 0 15px; font: 135% 'aldine'; text-align: center; }
 }
 section#crew:hover { background: $decklamp, $glow; }
 
@@ -164,8 +146,8 @@ section#crew:hover { background: $decklamp, $glow; }
 ////////////////////////////////////////////////////////////////////////////////
 
 section#birthday { width: 95%;
-	p{ margin-bottom: 0; font: 2.5em 'aldine'; }
-	time { display: block; margin-top: -5px; color: $dark-gray; font: 7.25em 'pompadour'; }
+	p{ margin-bottom: 0; font: 250% 'aldine'; }
+	time { display: block; margin-top: -5px; color: $dark-gray; font: 725% 'pompadour'; }
 }
 
 
@@ -176,15 +158,15 @@ section#birthday { width: 95%;
 ////////////////////////////////////////////////////////////////////////////////
 section#inquiry, section#mailing_list_signup { width: 95%; margin-top: -22px;
 	header {
-		h1 { position: relative; margin: 10px 0; text-align: center; font: 2.5em 'blanch_condensed'; }
+		h1 { position: relative; margin: 10px 0; text-align: center; font: 250% 'blanch_condensed'; }
 		h1:before, h1:after { content: ""; display: block; position: absolute; top: 7px; height: 23px; width: 136px; }
 		h1:before { left: 0; background: $fancybar top left no-repeat; }
 		h1:after { right: 0; background: $fancybar top right no-repeat; }
 	}
 	form { width: 95%; }
-	label { color: $dark-gray; font: 1.6em 'blanch_condensed'; }
+	label { color: $dark-gray; font: 160% 'blanch_condensed'; }
 	.links { position: relative; width: 100%;
-		>span { display: block; width: 103%; margin: 0 1%; padding: 20px 0 50px; color: $dark-gray; font: 2.15em 'blanch_condensed'; text-align: center; }
+		>span { display: block; width: 103%; margin: 0 1%; padding: 20px 0 50px; color: $dark-gray; font: 215% 'blanch_condensed'; text-align: center; }
 		input[type="submit"], a, a:link, a:visited { position: absolute; top: 0; height: 69px; width: 43%; background: $brown-gray; color: $off-white;
 			-webkit-transition: background-color .2s ease-in-out;  
 		     -moz-transition: background-color .2s ease-in-out;  
@@ -200,11 +182,11 @@ section#inquiry, section#mailing_list_signup { width: 95%; margin-top: -22px;
 		       -o-transform: scale(0.99);  
 		          transform: scale(0.99);
 		}
-		input[type="submit"] { left: 0; margin: 0; padding: auto 0; font: 2.5em 'aldine'; }	
+		input[type="submit"] { left: 0; margin: 0; padding: auto 0; font: 250% 'aldine'; }	
 		a { right: -4%; display: inline-block;
 			span { display: block; text-align: center; }
-			span.font { font: 2em 'blanch_condensed'; }
-			span.script { margin-bottom: -3; font: 2.5em 'wisdom_script'; }
+			span.font { font: 200% 'blanch_condensed'; }
+			span.script { margin-bottom: -3; font: 250% 'wisdom_script'; }
 		}
 	}
 	
@@ -244,7 +226,7 @@ section#mailing_list_signup {
 		width: 90%;
 		margin: 10px auto;
 		color: $dark-gray;
-		font: 1.5em/1.25 'blanch_condensed';
+		font: 150%/1.25 'blanch_condensed';
 		text-align: center;
 	}
 
