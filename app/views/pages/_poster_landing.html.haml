@@ -37,41 +37,42 @@
       %p voyage begins
       = time_tag(est_date, est_date.strftime('%m.%d.%y'))
     
-    %section#inquiry
-      %header
-        %h1 make an inquiry
-      = simple_form_for Inquiry.new do |f|
-        .clearfix
-          .name= f.input :name, placeholder: 'First Last', label: 'name'
-          .organization= f.input :organization, placeholder: 'Acme Co.', label: 'organization'
-        .clearfix
-          .email= f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
-          .budget= f.input :budget, label: 'budget'
-        .clearfix
-          .project= f.input :project_type, collection: %w(logo branding print web other), as: :check_boxes, label: false
-        .clearfix
-        .description= f.input :description,  placeholder: 'What can we do for you?', label: false
-        .mailing_list= f.input :mailing_list, as: :boolean, input_html: { checked: true }, label: 'mailing list'
-        .links
-          = f.button :submit, 'send'
-          %span - or -
-          = link_to '#', id: 'mailing_list_subscription' do
-            %span.font join our
-            %span.script Mailing List
-        
-    %section#mailing_list_signup{ hidden:true }
-      %header
-        %h1 mailing list
-      = simple_form_for MailingListSubscription.new do |f|
-        %p we'll keep you abreast of what's going on leading up to our official site launch. 
-        %p no more than twice a month
-        = f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
-        = f.input :captcha, as: :hidden  
-        .links
-          = f.button :submit, 'join'
-          %span - or -
-          = link_to '#', id: 'inquiry' do
-            %span.script Forget it
+    #forms
+      %section#inquiry
+        %header
+          %h1 make an inquiry
+        = simple_form_for Inquiry.new do |f|
+          .clearfix
+            .name= f.input :name, placeholder: 'First Last', label: 'name'
+            .organization= f.input :organization, placeholder: 'Acme Co.', label: 'organization'
+          .clearfix
+            .email= f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
+            .budget= f.input :budget, label: 'budget'
+          .clearfix
+            .project= f.input :project_type, collection: %w(logo branding print web other), as: :check_boxes, label: false
+          .clearfix
+          .description= f.input :description,  placeholder: 'What can we do for you?', label: false
+          .mailing_list= f.input :mailing_list, as: :boolean, input_html: { checked: true }, label: 'mailing list'
+          .links
+            = f.button :submit, 'send'
+            %span - or -
+            = link_to '#', id: 'mailing_list_subscription' do
+              %span.font join our
+              %span.script Mailing List
+          
+      %section#mailing_list_signup{ hidden:true }
+        %header
+          %h1 mailing list
+        = simple_form_for MailingListSubscription.new do |f|
+          %p we'll keep you abreast of what's going on leading up to our official site launch. 
+          %p no more than twice a month
+          = f.input :email, placeholder: 'john.doe@example.com', label: 'email address'
+          = f.input :captcha, as: :hidden  
+          .links
+            = f.button :submit, 'join'
+            %span - or -
+            = link_to '#', id: 'inquiry' do
+              %span.script Forget it
 
 
   %footer

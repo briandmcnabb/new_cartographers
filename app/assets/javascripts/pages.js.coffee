@@ -4,7 +4,8 @@ jQuery ($)->
 	$('a#inquiry, a#mailing_list_subscription').click(
 		(event)->
 			event.preventDefault()
-			$('section#inquiry, section#mailing_list_signup').toggle()
+			options = {}
+			$('section#inquiry, section#mailing_list_signup').fadeToggle(800, 'easeInOutCubic')
 	) 
 	
 	
