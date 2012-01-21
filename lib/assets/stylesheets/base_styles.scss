@@ -1,18 +1,18 @@
 /*----------------------------------
   Flash Messages
 ---------------------------------*/
-#flash_notice, 
-#flash_error, 
-#flash_alert { 
+div#flash_notice, 
+div#flash_error, 
+div#flash_alert { 
 	font-size: 150%; 
 	text-align: center;
 } 
-#flash_notice { 
+div#flash_notice { 
 	background-color: #CFC; 
 	border-bottom: 5px solid #6C6; 
 }
-#flash_error, 
-#flash_alert { 
+div#flash_error, 
+div#flash_alert { 
 	background-color: #FCC; 
 	border-bottom: 5px solid #C66; 
 }

@@ -11,3 +11,11 @@ jQuery ($)->
 	
 	# Lettering.js
 	$('div#cartographers, section#introduction p').lettering() if Modernizr.fontface
+	
+	
+	# Flash Messages
+	$('aside.flash_message a#close').click(
+		(event)->
+			event.preventDefault()
+			$('aside.flash_message').fadeToggle(800, 'easeInOutCubic')
+	)

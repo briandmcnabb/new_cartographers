@@ -1,12 +1,16 @@
 -# Set Variables 
 - est_date = Time.new(2012, 04, 05)
 
+
+
 -# Markup
 %section#poster_landing.clearfix
-  -#- flash.each do |name, msg|
-  -#  = content_tag :div, msg, :id => "flash_#{name}"
-  -#- flash.clear
-
+  - flash.each do |name, msg|
+    = content_tag :aside, class: 'flash_message', id: "flash_#{name}" do
+      = msg
+      = link_to 'close flash message', '#', class: 'ir', id: 'close'
+  - flash.clear
+  
   %header
     %h1
       #new NEW
